@@ -93,8 +93,10 @@
     private float mFlagPointTwoX;
     private float mFlagPointTwoY;
 ```
+
 将绘制的api，修改为绘制三阶贝塞尔曲线的`cubicTo()`方法
 `mPath.cubicTo(mFlagPointOneX, mFlagPointOneY, mFlagPointTwoX, mFlagPointTwoY, mEndPointX, mEndPointY);`
+
 ![](https://upload-images.jianshu.io/upload_images/11184437-8c049b9bbfabe1b7.gif?imageMogr2/auto-orient/strip)
 
 由于是俩个控制点，需要考虑多点触控
