@@ -1,7 +1,9 @@
 # 贝塞尔花式曲线
 ### 什么是[贝塞尔曲线](https://zh.wikipedia.org/wiki/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A)？
 简单的说就是可以把曲线，精确的用数学公式进行描述。如下图
+
 ![](https://upload-images.jianshu.io/upload_images/11184437-c957f177af750d03.gif?imageMogr2/auto-orient/strip)
+
 [模拟N阶贝塞尔曲线(需翻墙)](http://myst729.github.io/bezier-curve/)
 
 ### 二阶贝塞尔曲线
@@ -37,6 +39,7 @@
 ```
 ##### 绘制贝塞尔曲线
 ![](https://upload-images.jianshu.io/upload_images/11184437-564d140980e86b0d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 `mPath.quadTo()和mPath.rQuadTo()`是绘制二阶贝塞尔曲线的api
 `mPath.quadTo(float x1,float y1,float x2,float y2)` 是绝对坐标 
 第一、二个参数是控制点坐标，第三、四个参数终点坐标
@@ -80,6 +83,7 @@
 ```
 ### 三阶贝塞尔曲线
 ![](https://upload-images.jianshu.io/upload_images/11184437-674e2b2e078ddf9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 相较于二阶，三阶只是多了一个控制点
 所以需要定义俩个控制点
 
@@ -147,6 +151,7 @@ mValueAnimator = ValueAnimator.ofFloat(mStartPointY, h);
 这里使用贝塞尔曲线来实现。
 需要俩个贝塞尔曲线组合来实现波浪效果。
 ![](https://upload-images.jianshu.io/upload_images/11184437-56762d178b50ff26.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 绘制上面半圆，它的起点也就是屏幕左侧的X1点，终点就是一半波形的长度
 控制点大概是在波形中间偏上的位置，第二个曲线的控制点横坐标*2，纵坐标不变
 ```
@@ -154,6 +159,7 @@ mPath.quadTo(200,mStartPointY - 300,400,mStartPointY );
 mPath.quadTo(600,mStartPointY + 300,800,mStartPointY );
 ```
 ![](https://upload-images.jianshu.io/upload_images/11184437-aeac454afe27b7e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 接下来就就是绘制出铺满屏幕的动态波形
 首先要先确认下屏幕能容纳多少个波长，这里先定义几个变量。
 ```
@@ -243,8 +249,10 @@ mPath.quadTo(600,mStartPointY + 300,800,mStartPointY );
         return point;
     }
 ```
+
 首先用二阶贝塞尔曲线绘制一个抛物线
 通过上面的工具类来获取贝塞尔曲线点的坐标，从而实现抛物线轨迹的动画
+
 ```
 @Override
     public void onClick(View view) {
